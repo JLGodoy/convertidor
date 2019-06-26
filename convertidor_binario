@@ -1,0 +1,23 @@
+int   residuo, resultado[8],res;
+            float entrada, dividendo;
+
+            printf("Introduzca el numero decimal :");
+            scanf("%f",&entrada);
+
+            if(entrada > 128){
+                    printf("Introduzca otro numero:");
+                    scanf("%f",&entrada);
+            }
+            else{
+                dividendo = entrada;
+
+                for(int contador = 0; contador < 8; contador++){
+                    dividendo = dividendo / 2;
+                    res = (int)dividendo;
+                    residuo = (dividendo *2)-(res *2);
+                    resultado[contador] = residuo;
+                }
+
+                printf("%d %d %d %d, %d %d %d %d", resultado[7], resultado[6], resultado[5], resultado[4],resultado[3], resultado[2],resultado[1],resultado[0]);
+
+            }
